@@ -1,0 +1,30 @@
+﻿@model  List<mvcCRUDoperations.Context.tblUserInfo>
+@{
+    ViewBag.Title = "StudentList";
+}
+
+<table class="table table-hover">
+    <tr>
+        <th>Name</th>
+        <th>Mobile Number</th>
+        <th>Address</th>
+        <th>Department</th>
+        <th>Action</th>
+    </tr>
+    
+    @foreach(var item in Model)
+            {
+<tr>
+    <td>@item.empName</td>
+    <td>@item.empMobile</td>
+    <td>@item.empAddress</td>
+    <td>@item.empDept</td>
+    <td>
+        <a href="@Url.Action("Student",new {item.empId,item.empName,item.empMobile,item.empAddress,item.empDept})" class="btn btn-success">Edit</a>
+        <a href="@Url.Action("Delete",new { item.empId })" class="btn btn-danger">Delete</a>
+    </td>
+
+</tr>
+            }
+</table>
+
