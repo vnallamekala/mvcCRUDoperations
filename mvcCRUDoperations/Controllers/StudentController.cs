@@ -52,6 +52,7 @@ namespace mvcCRUDoperations.Context.Controllers
         {
             var res = dbObj.tblUserInfos.ToList();
             return View(res);
+
         }
         public ActionResult Delete(int empId)
         {
